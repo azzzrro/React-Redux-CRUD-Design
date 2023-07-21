@@ -1,0 +1,31 @@
+
+
+table thead {
+    background-color: #ef7367;
+    color: white;
+}
+
+table thead tr,table tbody tr{
+    height: 40px;
+}
+
+th,td{
+    padding: 0 0 0 20px;
+}
+
+tbody {
+    background-color: #f4f4f4;
+}
+
+tbody tr:hover {
+    background-color: #fee2df;
+    cursor: pointer;
+}
+
+
+.table-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

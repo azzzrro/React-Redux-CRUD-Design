@@ -1,0 +1,81 @@
+
+
+.signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #b89cdc;
+}
+
+.signup-form{
+    border-radius: 35px;
+    height: fit-content;
+    width: 350px;
+    background-color: white;
+    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 30px 0;
+}
+
+.signup-form .signup .heading h1{
+    font-weight: 700;
+}
+
+.signup-form .signup p{
+    cursor: pointer;
+}
+
+.signup{
+    width: 100%;
+}
+
+.signup p{
+    margin: 15px 0 0 0;
+}
+
+.signup .heading h1{
+    margin: 0 0 20px 0;
+}
+
+.signup-form input{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 0 0 0 5px;
+    border-radius: 10px;
+    background-color: rgb(237, 237, 237);
+    border-color: transparent;
+}
+
+.signup-form button{
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: green;
+    border: none;
+    color: white;
+    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.image-selection input{
+    text-align: center;
+    padding: 5px;
+    background-color: #e4d8f2;
+    cursor: pointer;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    width: 80%;
+    height: 35px;
+    padding: 8px 0 0 0;
+    cursor: pointer;
+    margin: 5px 0 10px 0;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+  }

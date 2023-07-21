@@ -1,0 +1,1 @@
+export const apiURLUser = "http://localhost:5000"
