@@ -1,26 +1,30 @@
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { UserUpdateAction } from '../../../services/redux/action/userUpdate'
-import './profile.css'
-import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
 
-function Profile() {
+import '../updateProfile/update.css'
+import { UserUpdateAction } from '../../../services/redux/action/userUpdate'
+
+function AdminUpdate() {
     const [selectedImage, setSelectedImage] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
-    const user = useSelector((state) => state.UserUpdate)
+    const user = useSelector((state) => state.UserUpdate);
+
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const id = searchParams.get('id');
 
     const APIURL = useSelector((state) => state.APIURL.url);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+
     useEffect(() => {
-        const userEmail = localStorage.getItem('userEmail');
-        axios.get(`${APIURL}/profile`, {
-            params: { email: userEmail },
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-        })
+        const headers = { Authorization: `Bearer ${localStorage.getItem('token')}` };
+        axios
+            .get(`${APIURL}/admin/editUser/${id}`, { headers })
             .then((response) => {
                 dispatch(UserUpdateAction('username', response.data.username));
                 dispatch(UserUpdateAction('email', response.data.email));
@@ -31,23 +35,22 @@ function Profile() {
                 console.log(error);
                 alert(error.response.data.message);
             });
-    }, [APIURL, dispatch]);
-
+    }, [APIURL, dispatch, id]);
 
     const handleImageChange = (e) => {
         const image = e.target.files[0];
-        setSelectedImage(image);
-        setPreviewImage(URL.createObjectURL(image));
+        if (image) {
+            setSelectedImage(image);
+            setPreviewImage(URL.createObjectURL(image));
+        }
     };
-
 
     const onChange = (e) => {
         dispatch(UserUpdateAction(e.target.name, e.target.value));
     };
 
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async(event)=>{
+        event.preventDefault();
         try {
             const formData = new FormData();
             if (selectedImage) {
@@ -56,11 +59,11 @@ function Profile() {
             formData.append('username', user.username);
             formData.append('email', user.email);
             formData.append('mobile', user.mobile);
-            const oldEmail = localStorage.getItem('userEmail')
+            formData.append('password', user.password);
             const headers = { Authorization: `Bearer ${localStorage.getItem('token')}` };
-            const response = await axios.patch(`${APIURL}/profile-update`, formData, { headers, params: { userEmail: oldEmail } });
+            const response = await axios.put(`${APIURL}/admin/updateUser/${id}`, formData, { headers });
             if (response.data.email) {
-                navigate('/home');
+                navigate('/dashboard');
             } else {
                 alert(response.data.message);
             }
@@ -68,33 +71,15 @@ function Profile() {
             console.log(error);
             alert(error.response.data.message);
         }
-    };
-
-    const Logout = ()=>{
-        localStorage.clear()
-        navigate('/')
     }
 
 
-
-
     return (
-        <div className='main'>
+        <div className='admin-main'>
 
-            <div className="navbar">
-                <div className="navbar-brand">
-                    <h3>User Profile</h3>
-                </div>
-                <nav className="navbar-nav">
-                        <div onClick={Logout} className="nav-item">
-                            <p>Logout</p>
-                        </div>
-                </nav>
-            </div>
-
-            <div className="signup-container">
-                <div className="signup-form">
-                    <div className="signup">
+            <div className="admin-update-container">
+                <div className="admin-update-form">
+                    <div className="admin-update">
                         <div className="heading">
                             <h1>Update Profile</h1>
                         </div>
@@ -107,6 +92,7 @@ function Profile() {
                                     placeholder="Enter your name"
                                     value={user.username}
                                     onChange={onChange}
+                                   
                                 />
                             </div>
                             <div>
@@ -116,7 +102,7 @@ function Profile() {
                                     name="email"
                                     placeholder="Enter your email"
                                     value={user.email}
-                                    onChange={onChange}
+                            onChange={onChange}
                                 />
                             </div>
                             <div>
@@ -126,20 +112,9 @@ function Profile() {
                                     name="mobile"
                                     placeholder="Enter your number"
                                     value={user.mobile}
-                                    onChange={onChange}
+                            onChange={onChange}
                                 />
                             </div>
-                            {/* <div>
-                                <input
-                                    type="password"
-                                    className="input"
-                                    name="password"
-                                    placeholder="Create a password"
-                                    value={signup.password}
-                                    onChange={onChange}
-                                />
-                            </div> */}
-
                             <div className="image-selection">
                                 <label htmlFor="fileInput" className="custom-file-upload">
                                     {user.image || previewImage ? "Choose another photo" : "Select a profile Photo"}
@@ -149,7 +124,7 @@ function Profile() {
                                     type="file"
                                     name="image"
                                     id="fileInput"
-                                    onChange={handleImageChange}
+                                    
                                     style={{ display: "none" }}
                                 />
                             </div>
@@ -181,16 +156,6 @@ function Profile() {
                             </div>
                             <button>Update Profile</button>
                         </form>
-                        {/* <p>
-                            Already registered?{" "}
-                            <span
-                                onClick={() => {
-                                    navigate("/");
-                                }}
-                            >
-                                Login here
-                            </span>
-                        </p> */}
                     </div>
                 </div>
             </div>
@@ -198,5 +163,7 @@ function Profile() {
     )
 }
 
-export default Profile
+export default AdminUpdate
+
+
 

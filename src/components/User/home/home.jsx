@@ -29,11 +29,10 @@ function Home() {
   }, [APIURL])
 
   return (
-    <div className='container'>
-
-      {/* <div className="navbar">
+    <div className='main'>
+      <div className="navbar">
         <div className="navbar-brand">
-          <h3>User Management-System</h3>
+          <h3>User Profile</h3>
         </div>
         <nav className="navbar-nav">
           {data.email ?
@@ -53,49 +52,53 @@ function Home() {
 
           }
         </nav>
-      </div> */}
+      </div>
 
-      {data.email &&
-      <div className="container mt-4 mb-4 p-3 d-flex justify-content-center">
-      <div className="card p-4">
-        <div className="image d-flex flex-column justify-content-center align-items-center">
-          <button className="btn btn-secondary">
-            <img src={`${APIURL}/public/images/${data.image}`} alt={data.image}/>
-          </button>
-          <span className="name mt-3">{data.username}</span>
-          <span className="idd">{data.email}</span>
-          <div className="d-flex flex-row justify-content-center align-items-center gap-2">
+      <div className='container'>
+
+
+
+        {data.email &&
+          <div className="container mt-4 mb-4 p-3 d-flex justify-content-center">
+            <div className="card p-4">
+              <div className="image d-flex flex-column justify-content-center align-items-center">
+                <button className="btn btn-secondary">
+                  <img src={`${APIURL}/public/images/${data.image}`} alt={data.image} />
+                </button>
+                <span className="name mt-3">{data.username}</span>
+                <span className="idd">{data.email}</span>
+                {/* <div className="d-flex flex-row justify-content-center align-items-center gap-2">
             <span>
               <i className="fa fa-copy"></i>
             </span>
-          </div>
-          <div className="d-flex flex-row justify-content-center align-items-center mt-3">
-            <span className="number">
-            {data.mobile}
-            </span>
-          </div>
-          <div className="d-flex mt-2">
-            <button  onClick={(() => { navigate('/profileUpdate') })} className="btn1 btn-dark">Edit Profile</button>
-          </div>
-          
-          <div className="text-center mt-3">
-            <span>Joining Date </span>
-          </div>
-          
+          </div> */}
+                <div className="d-flex flex-row justify-content-center align-items-center mt-3">
+                  <span className="number">
+                    {data.mobile}
+                  </span>
+                </div>
+                <div className="d-flex mt-2">
+                  <button onClick={(() => { navigate('/profile-update') })} className="btn1 btn-dark">Edit Profile</button>
+                </div>
+
+                <div className="text-center mt-3">
+                  <span>Joining Date : {data.date}</span>
+                </div>
 
 
-          <div className='d-flex'>
-          <div className="d-flex mt-4">
-            <button onClick={Logout} className="btn2 btn-dark">Logout</button>
+
+                <div className='d-flex'>
+                  <div className="d-flex mt-4">
+                    <button onClick={Logout} className="btn2 btn-dark">Logout</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
-          </div>
-        
-        </div>
+        }
+
       </div>
-    </div>
-}
-
-
     </div>
   )
 }

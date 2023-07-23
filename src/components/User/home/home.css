@@ -1,18 +1,19 @@
 
 
 body {
-  background-color: #b89cdc
+  
 }
-/* 
+ 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #000;
+  background-color: white;
   padding: 15px 10px 0 20px;
 }
 
 .navbar-brand {
-  color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
@@ -34,13 +35,19 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
-} */
+}
 
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 70px;
+}
+
+.main{
   height: 100vh;
+  background-image: url("C:\Users\azhar\Downloads\4eaa5c3498d864fc640a2fd105ffb1b9.jpg");
+  background-size: cover;
 }
 
 .card {

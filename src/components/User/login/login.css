@@ -6,21 +6,33 @@
     align-items: center;
     text-align: center;
     height: 100vh;
-    background-color:#b89cdc
+    /* background-color:#b89cdc */
+    background-image: url("C:\Users\azhar\Downloads\—Pngtree—creative gradient light blue light_966311.jpg");
+    background-size: cover;
 }
 
+.login-form .login-image img{
+    height: 350px;
+    width: auto;   
+    transition: 0.3s ease-in-out;
+}
+
+.login-form .login-image img:hover{
+    transform: scale(1.02);
+}
 
 .login-form{
     /* border: 1px solid black; */
     border-radius: 35px;
-    height: 350px;
-    width: 350px;
+    height: 400px;
+    width: fit-content;
     background-color: white;
     box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0 0 0;
+    padding: 20px 50px 0 0;
+    overflow: hidden;
 }
 
 .login-form .login h1{

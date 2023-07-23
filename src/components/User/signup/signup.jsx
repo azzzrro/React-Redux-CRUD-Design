@@ -7,10 +7,6 @@ import axios from "../../../services/axios/axios";
 import {UserSignupAction} from '../../../services/redux/action/userSignup'
 
 function Signup() {
-    // const [username, setUserName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [mobile, setMobile] = useState("");
-    // const [password, setPassword] = useState("");
     const [image, setImage] = useState(null);
     const [viewImage, setViewImage] = useState(null);
 
@@ -116,7 +112,7 @@ function Signup() {
                             <div>
                                 {image && (
                                     <img
-                                        style={{ width: "250px", height: "100px", margin: "5px 0 15px 0" }}
+                                        style={{ width: "auto", height: "100px", margin: "5px 0 15px 0" }}
                                         src={viewImage}
                                         alt="profile-image"
                                         className="profile-image"
@@ -135,6 +131,9 @@ function Signup() {
                                 Login here
                             </span>
                         </p>
+                    </div>
+                    <div className="signup-image">
+                        <img src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7885.jpg?w=740&t=st=1689949881~exp=1689950481~hmac=58560ad660e25612b606680a6bdc8653304832d1d1ecc9a86b0857d6dee6af83" alt="" />
                     </div>
                 </div>
             </div>
