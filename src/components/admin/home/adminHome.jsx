@@ -18,8 +18,12 @@ function AdminHome() {
         try {
             if (window.confirm("Are you sure you want to delete this user?")) {
 
-                await axios.delete(`${APIURL}/admin/deleteUser/${userId}`, userId);
-                window.location.reload()
+                const userData = await axios.delete(`${APIURL}/admin/deleteUser/${userId}`, userId);
+                if(userData.data.email){
+                    setUsers(prevUsers => prevUsers.filter(user => user._id !== userId))
+                }else{
+                    alert(userData.data.message)
+                }
             }
         } catch (error) {
             console.error(error);
@@ -27,19 +31,15 @@ function AdminHome() {
     }
 
     const addUser = () => {
-        navigate('/addUser')
+        navigate('/admin-addUser')
     }
 
-    const editUser = async (userId) => {
-        
-    }
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
                 const response = await axios.get(`${APIURL}/admin/loadDashboard`);
-                console.log(response.data);
-                setUsers(response.data);
+                setUsers(response.data)
             } catch (error) {
                 console.error(error);
             }
@@ -107,7 +107,9 @@ function AdminHome() {
                                                 dispatch(UserUpdateAction(users._id))
                                                 navigate(`/admin-update?id=${users._id}`)
                                             }} className="edit material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
-                                            <i style={{color:"red"}} className="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+
+                                            <i onClick={()=>deleteUser(users._id)} 
+                                            style={{color:"red"}} className="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
                                     </td>
                                 </tr>
                                 ))

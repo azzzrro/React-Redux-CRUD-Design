@@ -76,7 +76,6 @@ function AdminUpdate() {
 
     return (
         <div className='admin-main'>
-
             <div className="admin-update-container">
                 <div className="admin-update-form">
                     <div className="admin-update">

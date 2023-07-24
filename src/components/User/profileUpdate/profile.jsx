@@ -92,9 +92,9 @@ function Profile() {
                 </nav>
             </div>
 
-            <div className="signup-container">
-                <div className="signup-form">
-                    <div className="signup">
+            <div className="user-update-container">
+                <div className="update-form">
+                    <div className="update">
                         <div className="heading">
                             <h1>Update Profile</h1>
                         </div>

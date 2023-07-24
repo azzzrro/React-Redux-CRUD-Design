@@ -76,7 +76,7 @@ function Login() {
                                 />
                             </div>
                             <div>
-                                <input type="text"
+                                <input type="password"
                                     className='input'
                                     name='password'
                                     placeholder='Enter your password'

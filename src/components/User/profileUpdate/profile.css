@@ -33,19 +33,21 @@
   }
 
 
-.signup-container{
+.user-update-container{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-top: -67px; 
-    /* height: 100vh; */
+    height: 100vh;
     /* background-color: #b89cdc; */
     background-image: url("C:\Users\azhar\Downloads\4eaa5c3498d864fc640a2fd105ffb1b9.jpg");
     background-size: cover;
 }
 
-.signup-form{
+
+
+.update-form{
     border-radius: 35px;
     height: fit-content;
     width: fit-content;
@@ -57,27 +59,27 @@
     padding: 40px 40px 40px 40px;
 }
 
-.signup-form .signup .heading h1{
+.update-form .update .heading h1{
     font-weight: 700;
 }
 
-.signup-form .signup p{
+.update-form .update p{
     cursor: pointer;
 }
 
-.signup{
+.update{
     width: 100%;
 }
 
-.signup p{
+.update p{
     margin: 15px 0 0 0;
 }
 
-.signup .heading h1{
+.update .heading h1{
     margin: 0 0 20px 0;
 }
 
-.signup-form input{
+.update-form input{
     width: 100%;
     height: 40px;
     margin-bottom: 10px;
@@ -87,7 +89,7 @@
     border-color: transparent;
 }
 
-.signup-form button{
+.update-form button{
     width: 80%;
     height: 40px;
     border-radius: 10px;
