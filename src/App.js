@@ -10,13 +10,14 @@ import AdminUpdatePage from './pages/admin/update';
 import AdminAddUser from './pages/admin/addUser';
 
 function App() {
+  const token = localStorage.getItem('token')
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-       <Route Component={LoginPage} path='/'/>
-       <Route Component={signupPage} path='/signup' />
-       <Route Component={homePage} path='/home'/>
+       <Route Component={token? homePage: LoginPage} path='/'/>
+       <Route Component={token? homePage: signupPage} path='/signup'/>
+       <Route Component={token? homePage: LoginPage} path='/home'/>
        <Route Component={profileUpdate} path='/profile-update' />
        <Route Component={adminLoginPage} path='/admin' />
        <Route Component={adminHomePage} path='/dashboard' />

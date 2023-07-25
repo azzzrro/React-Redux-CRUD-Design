@@ -18,7 +18,6 @@ function Signup() {
     };
 
     const signup = useSelector((state) => state.UserSignup);
-    const APIURL = useSelector((state) => state.APIURL.url);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -62,6 +61,7 @@ function Signup() {
                                     className="input"
                                     name="username"
                                     placeholder="Enter your name"
+                                    required
                                     value={signup.username}
                                     onChange={onChange}
                                 />
@@ -72,6 +72,7 @@ function Signup() {
                                     className="input"
                                     name="email"
                                     placeholder="Enter your email"
+                                    required
                                     value={signup.email}
                                     onChange={onChange}
                                 />
@@ -82,6 +83,7 @@ function Signup() {
                                     className="input"
                                     name="mobile"
                                     placeholder="Enter your number"
+                                    required
                                     value={signup.mobile}
                                     onChange={onChange}
                                 />
@@ -92,6 +94,7 @@ function Signup() {
                                     className="input"
                                     name="password"
                                     placeholder="Create a password"
+                                    required
                                     value={signup.password}
                                     onChange={onChange}
                                 />
@@ -105,6 +108,7 @@ function Signup() {
                                     type="file"
                                     name="image"
                                     id="fileInput"
+                                    required
                                     onChange={handleImageChange}
                                     style={{display: "none"}}
                                 />

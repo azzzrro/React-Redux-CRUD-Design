@@ -71,6 +71,7 @@ function Login() {
                                     className='input'
                                     name='email'
                                     placeholder='Enter your email'
+                                    required
                                     value={login.email}
                                     onChange={onChange}
                                 />
@@ -80,6 +81,7 @@ function Login() {
                                     className='input'
                                     name='password'
                                     placeholder='Enter your password'
+                                    required
                                     value={login.password}
                                     onChange={onChange}
                                 />
