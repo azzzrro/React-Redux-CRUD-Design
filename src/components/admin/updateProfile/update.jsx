@@ -37,13 +37,13 @@ function AdminUpdate() {
             });
     }, [APIURL, dispatch, id]);
 
-    const handleImageChange = (e) => {
-        const image = e.target.files[0];
-        if (image) {
-            setSelectedImage(image);
-            setPreviewImage(URL.createObjectURL(image));
-        }
-    };
+    // const handleImageChange = (e) => {
+    //     const image = e.target.files[0];
+    //     if (image) {
+    //         setSelectedImage(image);
+    //         setPreviewImage(URL.createObjectURL(image));
+    //     }
+    // };
 
     const onChange = (e) => {
         dispatch(UserUpdateAction(e.target.name, e.target.value));

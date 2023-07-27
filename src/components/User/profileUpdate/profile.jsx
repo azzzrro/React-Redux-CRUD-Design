@@ -156,21 +156,21 @@ function Profile() {
                             <div>
                                 {previewImage ? (
                                     <img
-                                        style={{ width: "250px", height: "100px", margin: "5px 0 15px 0" }}
+                                        style={{ width: "auto", height: "100px", margin: "5px 0 15px 0" }}
                                         src={previewImage}
                                         alt="profile-image"
                                         className="profile-image"
                                     />
                                 ) : user && user.image ? (
                                     <img
-                                        style={{ width: "250px", height: "100px", margin: "5px 0 15px 0" }}
+                                        style={{ width: "auto", height: "100px", margin: "5px 0 15px 0" }}
                                         src={`${APIURL}/public/images/${user.image}`}
                                         alt="profile-image"
                                         className="profile-image"
                                     />
                                 ) : (
                                     <img
-                                        style={{ width: "250px", height: "100px", margin: "5px 0 15px 0" }}
+                                        style={{ width: "auto", height: "100px", margin: "5px 0 15px 0" }}
                                         src=""
                                         alt="profile-image"
                                         className="profile-image"
