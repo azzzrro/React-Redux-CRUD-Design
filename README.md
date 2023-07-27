@@ -34,7 +34,7 @@ You may also see any lint errors in the console.
 
 ![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438156/git/react-redux/adminAdd_dbgm9m.jpg)
 
-![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438156/git/react-redux/adminAdd_dbgm9m.jpg)
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438157/git/react-redux/admin_update_lcdao0.jpg)
 
 
 ### `npm test`
