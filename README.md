@@ -1,8 +1,12 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+First Locate the project directory, and run the command:
 
-## Available Scripts
+### `npm install`
+
+This will install the necessary dependencies for the app.\
+Once the installation is complete, you can proceed to run the app.
+
 
 In the project directory, you can run:
 
@@ -13,6 +17,25 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Screenshots
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438158/git/react-redux/signup_gf2zgo.jpg)
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438155/git/react-redux/login_ybjtzm.jpg)
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438156/git/react-redux/user_profile_bbj5ih.jpg)
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438158/git/react-redux/user_update_ahknb0.jpg)
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438157/git/react-redux/admin_login_pktnbx.jpg)
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438157/git/react-redux/admin_home_qqkfgc.jpg)
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438156/git/react-redux/adminAdd_dbgm9m.jpg)
+
+![App Screenshot](https://res.cloudinary.com/dmbpxal0o/image/upload/v1690438157/git/react-redux/admin_update_lcdao0.jpg)
+
 
 ### `npm test`
 
