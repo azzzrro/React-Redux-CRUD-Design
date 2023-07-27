@@ -1,6 +1,7 @@
 .table-container{
     height: 100vh;
-    background-color: #f0f0f0;
+    background-image: url('../../../../public/images/admin.jpg');
+	background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
